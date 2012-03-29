@@ -17,8 +17,38 @@ var query = new esri.tasks.Query();
 query.returnGeometry = true;
 query.outFields = ["*"];
 var zoneMap = {
-	"RL":"Residential",
-	"CBD":"Central Business District"
+	        "CB":"Zoning: Beach Commercial District",
+            "CBD":"Zoning: Central Business District",
+            "CBDE":"Zoning:Central Business District Subdistrict Lower Pacific",
+            "CC":"Zoning:Community Commercial",
+            "CD/R":"Zoning:Coastal Dependent/Related District",
+            "CN":"Zoning: Neighborhood Commercial",
+            "CT":"Zoning: Thoroughfare Commercial District",
+            "EA-20":"Zoning: Exclusive Agricultural District",
+            "FP":"Zoning: Flood Plain District",
+            "IG":"Zoning: General Industrial District",
+            "IG/PER":"Zoning: Industrial  District/Per Industrial Performance District (Tannery)",
+            "IG/PER2":"Zoning: Industrial  District/Performance District 2",
+            "OFR":"Zoning: Ocean Front (Recreational) District",                        
+            "PA":"Zoning: Professional and Administrative Office District",
+            "PF":"Zoning: Public Facilites",
+            "PF/PK":"Zoning: Public Facilites/Park District",
+            "PK":"Zoning: Park District",
+            "R-1-10":"Zoning: Single-Family Residence District 10,000 Sq Ft",
+            "R-1-5":"Zoning: Single-Family Residence District 5,000 Sq Ft",
+            "R-1-7":"Zoning: Single-Family Residence District 7,000 Sq Ft",
+            "RH":"Zoning: Residential High Density District",
+            "RL":"Zoning: Multiple Residence - Low Density",
+            "RM":"Zoning: Multiple Residence Medium-Density District",
+            "RS-10A":"Zoning: Residential Suburban 10 Acre Minimum",
+            "RS-1A":"Zoning: Residential Suburban District 1 Acre Min",
+            "RS-2A":"Zoning: Residential Suburban District 1 Acre Min",
+            "RS-5A":"Zoning: Residential Suburban 2 Acre Minimum",
+            "RTA":"Zoning: Tourist Medium Density Residential",
+            "RTB":"Zoning: Tourist Motel Residential District",
+            "RTBP":"Zoning: Tourist Motel Residential District Per Created With Beach Sola",
+            "RTC":"Zoning: Tourist Residential District -Subdistrict C - Beach Commercial",
+           "RTE":"Zoning: Tourist Beach Commercial District"
 }
 function executeQuery(x, y){
 	var point = new esri.geometry.Point(x, y, new esri.SpatialReference({wkid: 4326}));
@@ -37,7 +67,7 @@ function executeQuery(x, y){
 var codeAddress;
 var map;
 var _tilejson;
-wax.tilejson('http://a.tiles.mapbox.com/v3/tamaracfa.map-t1nbdcsa.jsonp',
+wax.tilejson('http://a.tiles.mapbox.com/v3/tamaracfa.map-34grm13p.jsonp',
   function(tilejson) {
   _tilejson = tilejson;
   map = new L.Map('map-div')
@@ -78,7 +108,7 @@ wax.tilejson('http://a.tiles.mapbox.com/v3/tamaracfa.map-t1nbdcsa.jsonp',
 </script>
 </head>
 <body>
-put in your address dude
+put in your address
 <label for="textfield"></label>
       <input type="text" name="textfield" id="address"><input type="submit" name="button" id="button" value="Submit" onClick="codeAddress()">
   
